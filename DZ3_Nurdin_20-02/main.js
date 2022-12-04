@@ -33,3 +33,132 @@ const bankInfo = {
 };
 console.log(bankInfo);
 console.log(bankInfo.bankPlace);
+
+//////////////////////////////////////////////////////////////
+
+let fruits = ["banana", "cherry", "melon", "apple", "orange"];
+console.log(fruits);
+let fruit_one = "apple";
+let i = 0;
+while (i < 5) {
+  if (fruits[i] === fruit_one) {
+    console.log("У фрукта " + fruit_one + " индекс : ", i);
+  }
+  i++;
+}
+
+/////////////////////////////////////////////////////////////////
+
+let randNum_1 = Math.floor(Math.random() * (100 - 0 + 1));
+let randNum_2 = Math.floor(Math.random() * (10 - 0 + 1));
+
+console.log(randNum_1, " и ", randNum_2);
+
+///////////////////////////////////////////////////////////////////
+
+for (let i = 0; i <= 12; i++) {
+  let month;
+
+  switch (i) {
+    case 1:
+      month = "January";
+      break;
+    case 2:
+      month = "february";
+      break;
+    case 3:
+      month = "march";
+      break;
+    case 4:
+      month = "april";
+      break;
+    case 5:
+      month = "may";
+      break;
+    case 6:
+      month = "june";
+      break;
+    case 7:
+      month = "july";
+      break;
+    case 8:
+      month = "August";
+      break;
+    case 9:
+      month = "September";
+      break;
+    case 10:
+      month = "October";
+      break;
+    case 11:
+      month = "November";
+      break;
+    case 12:
+      month = "December";
+      break;
+  }
+  console.log(month);
+  let nowMonth = new Date().getMonth() + 1; /// выводит текущий месяц
+  if (nowMonth === i) {
+    console.log(i);
+  }
+}
+
+/////////////////////////////////////////////////////////////////
+
+let fruits_1 = ["banana", "cherry", "melon", "apple", "orange"];
+for (const fruit_1 of fruits_1) {
+  console.log(fruit_1.toLocaleUpperCase()); /// всё с большой буквы
+}
+
+//////////////////////////////////////////////////////////////////
+
+const arrPhone = {
+  call_1: "+996700754454",
+  call_2: "+996502024964",
+  call_3: "+996707023773",
+};
+for (const a of arrPhone) {
+  console.log(a);
+}
+
+let phonePart_1 = arrPhone.call_1.substring(0, 4);
+let phonePart_2 = arrPhone.call_1.substring(4, 7);
+let phonePart_3 = arrPhone.call_1.substring(7, 9);
+let phonePart_4 = arrPhone.call_1.substring(9, 11);
+let phonePart_5 = arrPhone.call_1.substring(11, 13);
+let allPhoneNumber =
+  phonePart_1 +
+  "(" +
+  phonePart_2 +
+  ")" +
+  phonePart_3 +
+  "-" +
+  phonePart_4 +
+  "-" +
+  phonePart_5;
+
+console.log(allPhoneNumber);
+
+///////////////////////////////////////////////////////////////////
+
+function validateByLuhn(cardNumber) {
+  let isSecond = false;
+  let sum = 0;
+  for (let i = cardNumber.length - 1; i >= 0; i--) {
+    let cardNum = Number(cardNumber[i]);
+    if (isSecond) {
+      let doubleNum = (cardNum * 2).toString().padStart(2, 0); /// вначало добавляет 0 если число одно
+      sum += Number(doubleNum[0]) + Number(doubleNum[1]);
+    } else {
+      sum += cardNum;
+    }
+    isSecond = !isSecond;
+  }
+  return sum % 10 === 0;
+}
+console.log(
+  validateByLuhn("4169585342067450")
+    ? "Ваша карта прошла проверку"
+    : "Ваша карта палевная"
+);
