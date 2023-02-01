@@ -55,6 +55,15 @@ h1 {
   align-items: center;
   justify-content: space-between;
 }
+.random_info {
+  display: inline-block;
+  margin-top: 200px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.down_text {
+  font-size: 40px;
+}
 .block_1,
 .block_2,
 .block_3 {
@@ -63,26 +72,45 @@ h1 {
   border: 2px solid black;
   border-radius: 20px;
 }
-.btn_back {
-  width: 80px;
-  height: 30px;
-  border-radius: 0px 10px 10px 0px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
 /* ///////////////////////// */
 .level_difficult {
   display: none;
   height: 100vh;
-  background-color: blueviolet;
+  background-color: grey;
+  text-align: center;
 }
-.random_info {
+
+.difficult_block {
+  width: 1400px;
+  margin: 0px auto;
+  padding-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.difficult_random_info {
   display: inline-block;
   margin-top: 200px;
   font-size: 30px;
   border-radius: 10px;
 }
-.down_text{
+.difficult_down_text {
   font-size: 40px;
+}
+.difficult_block_1,
+.difficult_block_2,
+.difficult_block_3,
+.difficult_block_4,
+.difficult_block_5,
+.difficult_block_6 {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.difficul_inner {
+  height: 100vh;
+  background-color: antiquewhite;
 }
